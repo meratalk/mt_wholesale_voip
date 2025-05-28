@@ -1,0 +1,606 @@
+/* Basic Reset & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #007bff; /* A nice blue for primary actions */
+    --secondary-color: #6c757d; /* For secondary buttons/text */
+    --light-grey: #f8f9fa; /* Background for alternating sections */
+    --dark-grey: #343a40; /* Darker text/footer background */
+    --text-color: #495057; /* General text color */
+    --heading-color: #212529; /* Heading text color */
+    --white: #ffffff;
+    --border-color: #dee2e6;
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+
+    --font-poppins: 'Poppins', sans-serif;
+    --font-open-sans: 'Open Sans', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-open-sans);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+a:hover {
+    color: #0056b3; /* Darker shade of primary color */
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-poppins);
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.8rem; line-height: 1.2; }
+h2 { font-size: 2.2rem; margin-bottom: 1.5rem; text-align: center; }
+h3 { font-size: 1.8rem; margin-bottom: 1rem; }
+p { margin-bottom: 1rem; }
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.bg-light-grey {
+    background-color: var(--light-grey);
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+.btn-large {
+    padding: 15px 35px;
+    font-size: 1.1rem;
+}
+
+.section-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+}
+
+/* Header */
+.main-header {
+    background-color: var(--white);
+    padding: 20px 0;
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-family: var(--font-poppins);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--heading-color);
+}
+
+.main-nav .nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav .nav-links li a {
+    color: var(--heading-color);
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: color 0.3s ease;
+}
+
+.main-nav .nav-links li a:hover {
+    color: var(--primary-color);
+}
+
+.nav-contact a {
+    background-color: var(--primary-color);
+    color: var(--white) !important; /* Override default link color */
+    padding: 8px 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-contact a:hover {
+    background-color: #0056b3;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--heading-color);
+    transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1517486803738-f91605f63d91?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
+    color: var(--white);
+    text-align: center;
+    padding: 150px 20px;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: var(--white);
+    font-weight: 700;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+/* About Section */
+.about-section h2 {
+    text-align: center;
+}
+
+/* Features, Benefits, Industries, Why Choose Us Grids */
+.feature-grid, .benefits-grid, .industry-grid, .why-choose-us-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 2rem;
+}
+
+.feature-item, .benefit-item, .industry-item, .why-choose-us-item {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover, .benefit-item:hover, .industry-item:hover, .why-choose-us-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon, .benefit-icon, .industry-icon, .choose-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.feature-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.benefit-item p, .industry-item p {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+/* Pricing Section */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 3rem;
+}
+
+.pricing-plan {
+    background-color: var(--white);
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.pricing-plan:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+}
+
+.pricing-plan h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.pricing-plan .price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: 5px;
+}
+
+.pricing-plan .price span {
+    font-size: 3.5rem; /* Larger for the actual price */
+    color: var(--primary-color);
+}
+
+.pricing-plan .price-international {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.pricing-plan ul {
+    margin-bottom: 30px;
+}
+
+.pricing-plan ul li {
+    font-size: 1.05rem;
+    padding: 8px 0;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pricing-plan ul li i {
+    color: #28a745; /* Green checkmark */
+    margin-right: 10px;
+}
+
+.pricing-plan .btn {
+    margin-top: 20px;
+}
+
+.featured-plan {
+    border: 2px solid var(--primary-color);
+    transform: scale(1.03); /* Make featured plan slightly larger */
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.featured-plan .btn-primary {
+    background-color: var(--primary-color);
+}
+
+/* Testimonials Section */
+.testimonial-carousel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 3rem;
+    /* You might use a JS library for a real carousel (e.g., Swiper.js, Slick Carousel) */
+    /* For simplicity, this is a responsive grid layout that mimics a carousel feel with overflow */
+}
+
+.testimonial-item {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.testimonial-item .stars {
+    color: gold;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.testimonial-item p {
+    font-style: italic;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+.testimonial-item .customer-info {
+    font-weight: 600;
+    color: var(--heading-color);
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+/* CTA Section */
+.cta-section {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.cta-section h2 {
+    color: var(--white);
+    font-size: 2.5rem;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+.cta-section .btn {
+    background-color: var(--white);
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.cta-section .btn:hover {
+    background-color: var(--light-grey);
+    color: var(--primary-color);
+}
+
+/* FAQ Section */
+.faq-accordion {
+    max-width: 800px;
+    margin: 3rem auto 0 auto;
+}
+
+.faq-item {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.faq-question {
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    background-color: var(--white);
+    color: var(--heading-color);
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #f1f1f1;
+}
+
+.faq-question .fas {
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active .fas {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 25px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+}
+
+.faq-answer p {
+    padding-bottom: 20px; /* Add padding to the paragraph inside */
+    margin-bottom: 0; /* Remove default paragraph margin-bottom */
+}
+
+/* Footer */
+.main-footer {
+    background-color: var(--dark-grey);
+    color: var(--white);
+    padding-top: 60px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-column h3 {
+    color: var(--white);
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+}
+
+.footer-column p, .footer-column li a {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+
+.footer-column p i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.footer-column a:hover {
+    color: var(--primary-color);
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: var(--primary-color);
+}
+
+.footer-bottom {
+    background-color: #212529; /* Slightly darker footer bottom */
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .main-nav .nav-links {
+        gap: 20px;
+    }
+
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-nav .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--white);
+        position: absolute;
+        top: 80px; /* Adjust based on header height */
+        left: 0;
+        padding: 20px 0;
+        box-shadow: var(--box-shadow);
+    }
+
+    .main-nav .nav-links.active {
+        display: flex;
+    }
+
+    .main-nav .nav-links li {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hero-section {
+        padding: 100px 20px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .section-padding {
+        padding: 60px 0;
+    }
+
+    .pricing-grid, .feature-grid, .benefits-grid, .industry-grid, .why-choose-us-grid, .testimonial-carousel {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    }
+
+    .pricing-plan, .feature-item, .benefit-item, .industry-item, .why-choose-us-item, .testimonial-item {
+        margin: 0 auto;
+        max-width: 400px; /* Constrain width for better readability */
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-column {
+        align-items: center;
+    }
+    .footer-column .social-icons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .pricing-plan .price {
+        font-size: 2rem;
+    }
+
+    .pricing-plan .price span {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
